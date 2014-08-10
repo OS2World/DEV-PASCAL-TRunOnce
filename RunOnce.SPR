@@ -1,0 +1,98 @@
+[Compiler Options]
+
+Platform=OS/2
+CodeGeneration=Assertions
+Syntax=
+Optimize=OptimizeCommonSub,OptimizePeephole
+RuntimeCheck=
+CondDefine=
+
+[Compiler Warnings]
+
+Warnings=W2,W3,W4,W5,W6,W7
+MaxWarnings=200
+MaxErrors=10
+
+[Debugger Options]
+
+DebugInfo=
+EvalHints=True
+Dbg_Options=0
+RTL_Exceptions=1073741823
+SPCC_Exceptions=4194303
+
+[Directories]
+
+LastDir=D:\SIBYL\BIN
+OutDir=D:\SIBYL\Output
+LibDir=D:\SIBYL\Lib;D:\SIBYL\Units;D:\SIBYL\Components\Abbrevia
+LibSrcDir=D:\SIBYL\Source\RTL;D:\SIBYL\Source\SPCC;D:\SIBYL\Units;D:\SIBYL\Components\Abbrevia
+IncSrcDir=
+CompInstallDir=D:\SIBYL\Compnt;D:\SIBYL\Components\Abbrevia
+
+[General]
+
+Version=Sibyl Project Ver2.02
+ProjectName=D:\SIBYL\Components\RunOnce\RunOnce.SPR
+ProjectType=NonVisual
+CompLibName=..\..\.\BIN\COMPLIB.DLL
+RunParameter=
+InActiveLanguages=
+CurrentLanguage=
+
+[Last Open Files]
+
+File0=.\RunOnce.PAS
+File0.Left=-4
+File0.Bottom=-5
+File0.Width=600
+File0.Height=319
+File0.Column=1
+File0.Line=1
+
+[Linker Options]
+
+DataSegment=Normal
+LinkerTarget=GUI
+ExePacking=ExePack2
+RunVDM=True
+CurrentLanguage=Default
+InstallLanguages=
+
+[Memory Sizes]
+
+Heap=8192
+Stack=256
+
+[Project Files]
+
+Primary=
+
+[Repository]
+
+Page0=Projects
+Page0.Installed=True
+Page0.Object0=SpeedSoft.AppExpert
+Page0.Object0.NewProject=False
+Page0.Object0.NewForm=False
+Page0.Object0.MainForm=False
+Page0.Object0.InPage=True
+Page0.Object0.Title=AppExpert
+Page0.Object0.Description=(C) 1997 SpeedSoft.
+Page0.Object0.Author=SpeedSoft
+Page1=[Object Repository]
+Page1.Installed=True
+Page1.Object0=SpeedSoft.AppExpert
+Page1.Object0.NewProject=False
+Page1.Object0.NewForm=False
+Page1.Object0.MainForm=False
+Page1.Object0.InPage=True
+Page1.Object0.Title=AppExpert
+Page1.Object0.Description=(C) 1997 SpeedSoft.
+Page1.Object0.Author=SpeedSoft
+
+[SCU]
+
+SCUName=
+MainForm=
+

@@ -1,0 +1,73 @@
+TRunOnce Component
+******************
+The TRunOnce component allows a program to determine if a previous 
+instance of the program is already running and to possibly quit if
+a previous instance is determined to be running.  TRunOnce determines
+if a previous instance is running by allocating some named shared 
+memory.  The name of the memory allocated is the name of the EXE
+running with all '.' replaced by 'x' (for instance: TEST.EXE would
+equal \SHAREMEM\TEXTxEXE).  Subsequent runs while the original is
+still running return a valid value from checking the named memory.
+The original program stores window handle of its main form in the
+shared memory location so the subsequent programs can refocus the 
+window.
+Due to where window handles are allocated and available, the 
+component does not automatically halt the current instance if a 
+previous instance is running.
+
+To install:
+-----------
+Unzip the component source in your component source directory (my
+directory is "drv:\sibyl\Components\...".  Compile the source, then move
+the 'RunOnce.SPU' to the Sibyl COMPNT directory.
+In Sibyl, choose 'Component', then 'install'.  Go to the COMPNT directory 
+and select 'RunOnce.SPU'.  Select the TRunOnce component and click OK.
+The TRunOnce component/dialog will appear in a tab labeled 'Custom'.  To
+change the component location, edit the EXPORTS line in the source.
+
+TRunOnce Methods:
+-----------------
+CheckOnly - Procedure called in the main forms 'OnShow' event to check if 
+            it is the only copy of the program running.  This routine does 
+            not have to be called if only the knowledge is wanted that the 
+            program has a previous instance running.
+
+TRunOnce Properties:
+--------------------
+FirstInst - Read only, BOOLEAN.  Property returns TRUE for first instance
+            of program, FALSE for subsequent while first is running. 
+            Property is not available during the design stage.
+
+UseNotifyMsg - R/W, BOOLEAN.  Property determines if the 'CheckOnly' method
+               displays a dialog with a message to the effect that another
+               copy of the program is running.  Default is FALSE and the
+               property is available during design.
+
+NotifyMsg - R/W, STRING.  Property contains the message displayed if the
+            UseNotifyMsg property is set to TRUE.  The default message is:
+            'Application already running!' and the property is available
+            during design.
+
+Version - Read only (not stored) STRING.  Property is available during 
+          design.  Property returns the current version of the TRunOnce 
+          component.
+
+To use:
+-------
+Drop TRunOnce on form during design stage.  Call the CheckOnly method from the
+main forms 'OnShow' event.  Note, a message dialog is displayed if the RunOnce
+property 'UseNotifyMsg' is set to TRUE.
+
+For example-
+
+ Procedure TForm1.OnShow(Sender: TObject);
+ Begin
+   IF RunOnce1.FirstInst
+    THEN Caption := Caption + ' - Original';
+   RunOnce1.CheckOnly; {keep other instances from running}
+ End;
+
+Any comments, suggestions, bug fixes, feel free to contact me.
+
+- Michael G. Slack (slack@ibm.net), 1998/02/21
+
